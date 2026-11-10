@@ -340,12 +340,26 @@ export default function App() {
     setActiveModule('dua-register');
   };
 
+  const cornerSignature = (
+    <div
+      aria-label="Proyecto Grupo 3"
+      className="no-print fixed bottom-3 right-4 z-40 pointer-events-none select-none bg-white/95 backdrop-blur-sm border border-slate-200 rounded-md px-3.5 py-1.5 shadow-sm"
+    >
+      <span className="font-signature italic font-semibold text-[15px] leading-none tracking-tight text-[#0B3B60]">
+        Proyecto Grupo 3
+      </span>
+    </div>
+  );
+
   if (showViafirmaLogin || !sessionUser) {
     return (
-      <ViafirmaLogin
-        onComplete={handleLoginComplete}
-        onCancel={sessionUser ? () => setShowViafirmaLogin(false) : undefined}
-      />
+      <>
+        <ViafirmaLogin
+          onComplete={handleLoginComplete}
+          onCancel={sessionUser ? () => setShowViafirmaLogin(false) : undefined}
+        />
+        {cornerSignature}
+      </>
     );
   }
 
@@ -632,7 +646,7 @@ export default function App() {
         </aside>
 
         {/* Main Viewport */}
-        <main className="flex-1 p-4 sm:p-6 min-w-0 max-w-[1440px]">
+        <main className="flex-1 p-4 sm:p-6 pb-16 min-w-0 max-w-[1440px]">
           {activeModule === 'dua-register' && (
             <DuaFormView
               key={editingDua ? editingDua.id : `new-${sessionUser.perfil}`}
@@ -748,6 +762,8 @@ export default function App() {
         dua={printTargetDua}
         onClose={() => setPrintTargetDua(null)}
       />
+
+      {cornerSignature}
     </div>
   );
 }
