@@ -1,0 +1,6 @@
+{
+  "name": "Simulador SIGA DUA & DGII Exportación RD",
+  "description": "Simulador interactivo de Declaración Única Aduanera (DUA) de Exportación en SIGA (DGA) integrado con validación fiscal DGII (e-CF 46, NCF 16, Formato 607 e IT-1) y carga/descarga XML.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
